@@ -1,14 +1,18 @@
-def turn_count(board)
-  counter = 0 
-  turn_count each.do |user_input|
-    if user_input == "X" || user_input == "O"
-    counter += 1 
+def turn_count(turn)
+  move_count = []
+  turn.each do |unit|
+    if unit == "X" || unit == "O"
+      move_count.push(1)
+    end 
   end 
-    end
- counter
+  move_count.length.to_i
 end 
-
-
+ 
 def current_player(board)
-   turn_count(board) % 2 == 0 ? "X" : "O"
-end
+    num = turn_count(board)
+    if num % 2 == 0
+      return "X"
+    else
+      return "O" 
+    end 
+end 
