@@ -1,7 +1,7 @@
 def turn_count(board)
    counter = 0
-   board.each do |grid_block|
-      if spaces_block == "X" || spaces_block == "O"
+   board.each do |turn|
+      if turn == "X" || turn == "O"
          counter += 1
       end
    end
